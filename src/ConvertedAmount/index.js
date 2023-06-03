@@ -1,18 +1,26 @@
+import { useState } from "react";
 import "./style.css";
 
-const ConvertedAmount = () => (
-    <label class="exchangeForm__items exchangeForm__convertedLabel">
+const ConvertedAmount = ({amount, setAmount}) => {
+   
+
+    console.log(+amount);
+
+    return (
+    <label className="exchangeForm__items exchangeForm__convertedLabel">
         Kwota w PLN: 
         <input 
             type="number" 
-            class="exchangeForm__convertedAmount" 
+            className="exchangeForm__convertedAmount" 
             placeholder="Wpisz kwotę" 
             required 
-            value="1" 
+            value={amount} 
+            onChange={({target}) => setAmount(target.value)}
             step="0.01" 
             min="0"
         />
     </label>
-);
+    )
+};
 
 export default ConvertedAmount;

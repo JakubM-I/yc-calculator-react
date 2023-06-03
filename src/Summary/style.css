@@ -7,6 +7,10 @@
     margin-top: 0px;
 }
 
+.exchangeForm__summaryResult--disabled{
+    display: none;
+}
+
 .exchangeForm__summaryAmount{
     font-weight: 700;
     text-transform: uppercase;

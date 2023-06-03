@@ -1,6 +1,14 @@
+import { useState } from "react";
 import "./style.css";
 
-const CurrencySwitch = () => (
+const CurrencySwitch = ({currency, setCurrency}) => {
+    
+    
+    console.log(currency);
+    
+    
+
+    return (
     <ul className="exchangeForm__items exchangeForm__currencySwitch">
         <li className="exchangeForm__currencies">
             <input 
@@ -8,12 +16,13 @@ const CurrencySwitch = () => (
                 id="euro" 
                 type="radio" 
                 name="exchange_rate" 
-                value="euro" 
-                checked 
+                value="1"
+                checked={currency === "1"}
+                onChange={({target}) => setCurrency(target.value)} 
             />
             <label 
                 className="exchangeForm__label" 
-                for="euro">
+                htmlFor="euro">
                 Euro
             </label>
         </li>
@@ -23,11 +32,13 @@ const CurrencySwitch = () => (
                 id="dolar" 
                 type="radio" 
                 name="exchange_rate" 
-                value="dolar"
+                value="2"
+                checked={currency === "2"}
+                onChange={({target}) => setCurrency(target.value)}
             />
             <label 
                 className="exchangeForm__label" 
-                for="dolar">
+                htmlFor="dolar">
                 Dolar
             </label>
         </li>
@@ -37,15 +48,18 @@ const CurrencySwitch = () => (
                 id="frank" 
                 type="radio" 
                 name="exchange_rate" 
-                value="frank"
+                value="3"
+                checked={currency === "3"}
+                onChange={({target}) => setCurrency(target.value)}
             />
             <label 
                 className="exchangeForm__label" 
-                for="frank">
+                htmlFor="frank">
                 Frank
             </label>
         </li>
     </ul>
-);
+    )
+};
 
 export default CurrencySwitch;
