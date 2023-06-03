@@ -1,0 +1,30 @@
+input[type="radio"]{
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + .exchangeForm__label{
+    font-weight: 700;
+    color: #615355;
+}
+
+.exchangeForm__currencies{
+    padding-bottom: 5px;
+}
+
+.exchangeForm__label{
+    cursor: pointer;
+}
+
+.exchangeForm__currencySwitch{
+    list-style: none;
+    padding-left: 0px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .exchangeForm__currencySwitch{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}

@@ -1,0 +1,30 @@
+.exchangeForm__buttonSubmit{
+    width: 150px;
+    padding: 15px 10px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 25px;
+    background-color: #615355;
+    border: none;
+    color: #DEDEDC;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.exchangeForm__buttonReset{
+    width: fit-content;
+    display: block;
+    background: none;
+    border: none;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: hsl(340, 3%, 42%);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.exchangeForm__buttonReset:hover{
+    color: hsl(351, 8%, 55%);
+}

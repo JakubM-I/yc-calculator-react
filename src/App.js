@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import FieldSet from './Fieldset';
+import Container from './Container';
+import Form from './Form';
+import ConvertedAmount from './ConvertedAmount';
+import arrow from "./picture/arrow-icon.png";
+import CurrencySwitch from './CurrencySwitch';
+import Summary from './Summary';
+import Buttons from './Buttons';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="exchangeCalculator">
+      <h1 className="exchangeCalculator__title">Kalkuator walutowy</h1>
+      <form className="exchangeForm">
+        <FieldSet>
+          <legend className="exchangeForm__legend">Przelicz złotówki na wybraną walutę</legend>
+          <Container>
+            <Form>
+              <ConvertedAmount />
+              <img className="exchangeForm__arrow" src={arrow} alt="" />
+              <CurrencySwitch />
+            </Form>
+            <Summary />
+          </Container>
+        </FieldSet>
+        <Buttons />
+      </form>
     </div>
   );
 }

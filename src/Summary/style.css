@@ -1,0 +1,21 @@
+.exchangeForm__summary{
+    text-align: center;
+}
+
+.exchangeForm__summaryResult{
+    font-size: min(max(6vw, 18px), 22px);
+    margin-top: 0px;
+}
+
+.exchangeForm__summaryAmount{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.exchangeForm__summaryInformation{
+    font-size: 13px;
+}
+
+.exchangeForm__summaryCurrency{
+    text-transform: uppercase;
+}

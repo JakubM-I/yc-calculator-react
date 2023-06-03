@@ -1,0 +1,9 @@
+.exchangeForm__dataInput{
+    margin: 0 10px;
+    background: #F4F4F4;
+    color: #615355;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 17px -7px #615355;
+    position: relative;
+}
