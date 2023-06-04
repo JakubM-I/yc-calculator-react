@@ -3,10 +3,12 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    margin-top: 35px;
 }
 
 @media screen and (max-width: 450px) {
     .exchangeForm__form{
         flex-direction: column;
+        margin-top: 60px;
     }
 }
