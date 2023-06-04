@@ -27,8 +27,14 @@ function App() {
       rate: `${(1 / currencies[currency - 1].currencyRate)}`,
     }));
   
-  }
-  console.log(convertedAmount);
+  };
+  
+  const calcReset = () => {
+    setAmount(1);
+    setCurrency("1");
+    setConvertedAmount({})
+  };
+
   return (
     <div className="exchangeCalculator">
       <h1 className="exchangeCalculator__title">Kalkuator walutowy</h1>
@@ -46,7 +52,7 @@ function App() {
             <Summary convertedAmount={convertedAmount} currency={currency} />
           </Container>
         </FieldSet>
-        <Buttons />
+        <Buttons calcReset={calcReset} />
       </form>
     </div>
   );

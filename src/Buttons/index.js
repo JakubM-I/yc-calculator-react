@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Buttons = () => (
+const Buttons = ({calcReset}) => (
     <>
         <button 
             className="exchangeForm__buttonSubmit" 
@@ -8,6 +8,7 @@ const Buttons = () => (
             Wylicz
         </button>
         <button 
+            onClick={calcReset}
             className="exchangeForm__buttonReset" 
             type="reset">
             Resetuj kalkuator
