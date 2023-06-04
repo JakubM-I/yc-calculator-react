@@ -1,12 +1,6 @@
-import { useState } from "react";
 import "./style.css";
 
 const CurrencySwitch = ({currency, setCurrency}) => {
-    
-    
-    console.log(currency);
-    
-    
 
     return (
     <ul className="exchangeForm__items exchangeForm__currencySwitch">

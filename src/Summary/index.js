@@ -1,27 +1,42 @@
 import "./style.css";
+import { currencies } from "../Currencies";
 
-const Summary = ({recalculatedAmount}) => {
-    console.log(recalculatedAmount);
+const Summary = ({convertedAmount, currency}) => {
+    console.log(convertedAmount);
     return (
         <div className="exchangeForm__items exchangeForm__summary">
             <p className={
                 `exchangeForm__summaryResult 
-                ${Object.keys(recalculatedAmount).length === 0 
+                ${Object.keys(convertedAmount).length === 0 
                 ? "exchangeForm__summaryResult--disabled" 
                 : ""}`}
             >
                 <span className="js-summaryConvertedAmount">
-                    {`${recalculatedAmount.value1} ${recalculatedAmount.label1} = `}</span>
+                    {`${convertedAmount.currencyIn} ${convertedAmount.currencyInLabel} = `}
+                </span>
                 <span className="exchangeForm__summaryAmount js-summaryResult">
-                    {`${recalculatedAmount.value2} ${recalculatedAmount.label2}`}
+                    {`${(+convertedAmount.currencyOut).toFixed(2)} ${convertedAmount.currencyOutLabel}`}
                 </span>
             </p>
             <p className="exchangeForm__summaryInformation">
                 1 PLN = 
-                <span className="js-selectedCurrencyPrice"></span>
+                <span className="js-selectedCurrencyPrice">
+                    {` ${Object.keys(convertedAmount).length === 0 
+                        ? (1 / currencies[0].currencyRate).toFixed(3) 
+                        : (+convertedAmount.rate).toFixed(3)} 
+                        ${Object.keys(convertedAmount).length === 0 
+                        ? (currencies[0].label) 
+                        : (convertedAmount.currencyOutLabel)} `
+                    }
+                </span>
                 <span className="exchangeForm__summaryCurrency js-selectedCurrency"></span> 
                 według średniego kursu NBP 
-                <span className="js-selectedCurrencyRate"></span> 
+                <span className="js-selectedCurrencyRate">
+                    {` ${Object.keys(convertedAmount).length === 0 
+                        ? (currencies[0].currencyRate).toFixed(3) 
+                        : (+convertedAmount.exchangeRate).toFixed(3)} `
+                    }
+                </span> 
                 PLN z dnia 19.08.2022r.</p>
         </div>
     )
@@ -29,4 +44,4 @@ const Summary = ({recalculatedAmount}) => {
 
 export default Summary;
 
-// Object.keys(recalculatedAmount).length === 0
+// Object.keys(convertedAmount).length === 0

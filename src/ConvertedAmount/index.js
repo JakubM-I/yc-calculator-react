@@ -1,10 +1,6 @@
-import { useState } from "react";
 import "./style.css";
 
 const ConvertedAmount = ({amount, setAmount}) => {
-   
-
-    console.log(+amount);
 
     return (
     <label className="exchangeForm__items exchangeForm__convertedLabel">

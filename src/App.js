@@ -13,30 +13,22 @@ import { currencies } from './Currencies';
 function App() {
   const [amount, setAmount] = useState(1);
   const [currency, setCurrency] = useState("1");
-  const [recalculatedAmount, setRecalculatedAmount] = useState({})
-
-  // let recalculatedAmount = {};
+  const [convertedAmount, setConvertedAmount] = useState({})
 
   const formSubmit = (event) => {
     event.preventDefault();
 
-    setRecalculatedAmount(recalculatedAmount =>  ({
-      value1: amount,
-      label1: "PLN",
-      value2: `${(amount * (1 / currencies[currency - 1].currencyRate)).toFixed(2)}`,
-      label2: `${currencies[currency - 1].label}`
-    }))
-    // let recalculatedAmount = {
-    //   value1: amount,
-    //   label1: "PLN",
-    //   value2: `${(amount * (1 / currencies[currency - 1].currencyRate)).toFixed(2)}`,
-    //   label2: `${currencies[currency - 1].label}`
-    // }
-    // console.log(recalculatedAmount);
-    // console.log(`${(amount * (1 / currencies[currency - 1].currencyRate)).toFixed(2)} ${currencies[currency - 1].label}`)
-
+    setConvertedAmount(convertedAmount => ({
+      currencyIn: amount,
+      currencyInLabel: "PLN",
+      currencyOut: `${(amount * (1 / currencies[currency - 1].currencyRate))}`,
+      currencyOutLabel: `${currencies[currency - 1].label}`,
+      exchangeRate: `${currencies[currency - 1].currencyRate}`,
+      rate: `${(1 / currencies[currency - 1].currencyRate)}`,
+    }));
+  
   }
-  console.log(recalculatedAmount);
+  console.log(convertedAmount);
   return (
     <div className="exchangeCalculator">
       <h1 className="exchangeCalculator__title">Kalkuator walutowy</h1>
@@ -51,7 +43,7 @@ function App() {
               <img className="exchangeForm__arrow" src={arrow} alt="" />
               <CurrencySwitch currency={currency} setCurrency={setCurrency}/>
             </Form>
-            <Summary recalculatedAmount={recalculatedAmount} />
+            <Summary convertedAmount={convertedAmount} currency={currency} />
           </Container>
         </FieldSet>
         <Buttons />
