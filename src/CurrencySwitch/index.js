@@ -1,7 +1,6 @@
 import "./style.css";
 
 const CurrencySwitch = ({currency, setCurrency}) => {
-
     return (
     <ul className="exchangeForm__items exchangeForm__currencySwitch">
         <li className="exchangeForm__currencies">

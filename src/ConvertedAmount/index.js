@@ -1,7 +1,6 @@
 import "./style.css";
 
 const ConvertedAmount = ({amount, setAmount}) => {
-
     return (
     <label className="exchangeForm__items exchangeForm__convertedLabel">
         Kwota w PLN: 

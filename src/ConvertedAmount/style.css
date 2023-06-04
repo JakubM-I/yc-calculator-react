@@ -9,7 +9,8 @@
     font-size: 22px;
     padding: 4px;
     border-radius: 5px;
-    border: 1px solid #000;   
+    border: 1px solid #000;  
+    margin-left: 5px; 
 }
 
 .exchangeForm__convertedAmount::placeholder{

@@ -2,7 +2,6 @@ import "./style.css";
 import { currencies } from "../Currencies";
 
 const Summary = ({convertedAmount, currency}) => {
-    console.log(convertedAmount);
     return (
         <div className="exchangeForm__items exchangeForm__summary">
             <p className={
