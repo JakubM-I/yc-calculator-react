@@ -11,16 +11,18 @@ const Summary = ({convertedAmount, currency}) => {
                 ? "exchangeForm__summaryResult--disabled" 
                 : ""}`}
             >
-                <span className="js-summaryConvertedAmount">
-                    {`${convertedAmount.currencyIn} ${convertedAmount.currencyInLabel} = `}
+                <span>
+                    {`${convertedAmount.currencyIn} 
+                    ${convertedAmount.currencyInLabel} = `}
                 </span>
-                <span className="exchangeForm__summaryAmount js-summaryResult">
-                    {`${(+convertedAmount.currencyOut).toFixed(2)} ${convertedAmount.currencyOutLabel}`}
+                <span className="exchangeForm__summaryAmount">
+                    {`${(+convertedAmount.currencyOut).toFixed(2)} 
+                    ${convertedAmount.currencyOutLabel}`}
                 </span>
             </p>
             <p className="exchangeForm__summaryInformation">
                 1 PLN = 
-                <span className="js-selectedCurrencyPrice">
+                <span>
                     {` ${Object.keys(convertedAmount).length === 0 
                         ? (1 / currencies[0].currencyRate).toFixed(3) 
                         : (+convertedAmount.rate).toFixed(3)} 
@@ -29,9 +31,8 @@ const Summary = ({convertedAmount, currency}) => {
                         : (convertedAmount.currencyOutLabel)} `
                     }
                 </span>
-                <span className="exchangeForm__summaryCurrency js-selectedCurrency"></span> 
                 według średniego kursu NBP 
-                <span className="js-selectedCurrencyRate">
+                <span>
                     {` ${Object.keys(convertedAmount).length === 0 
                         ? (currencies[0].currencyRate).toFixed(3) 
                         : (+convertedAmount.exchangeRate).toFixed(3)} `

@@ -6,7 +6,6 @@ const CurrencySwitch = ({currency, setCurrency}) => {
     <ul className="exchangeForm__items exchangeForm__currencySwitch">
         <li className="exchangeForm__currencies">
             <input 
-                className="js-euro" 
                 id="euro" 
                 type="radio" 
                 name="exchange_rate" 
@@ -22,7 +21,6 @@ const CurrencySwitch = ({currency, setCurrency}) => {
         </li>
         <li className="exchangeForm__currencies">
             <input 
-                className="js-dolar" 
                 id="dolar" 
                 type="radio" 
                 name="exchange_rate" 
@@ -38,7 +36,6 @@ const CurrencySwitch = ({currency, setCurrency}) => {
         </li>
         <li className="exchangeForm__currencies">
             <input 
-                className="js-frank" 
                 id="frank" 
                 type="radio" 
                 name="exchange_rate" 

@@ -1,7 +1,7 @@
 import "./style.css";
 
 const Container = ({children}) => (
-    <div class="exchangeForm__itemSet">
+    <div className="exchangeForm__itemSet">
         {children}
     </div>
 );
