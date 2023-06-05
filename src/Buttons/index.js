@@ -11,7 +11,7 @@ const Buttons = ({calcReset}) => (
             onClick={calcReset}
             className="exchangeForm__buttonReset" 
             type="reset">
-            Resetuj kalkuator
+            Resetuj kalkulator
         </button>
     </>
 );
