@@ -4,13 +4,19 @@
     display: block;
     margin: 0 auto;
     margin-top: 25px;
-    background-color: #615355;
+    background: #615355;
     border: none;
     color: #DEDEDC;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+    transition: background-color .3s ease-in, color .3s ease-in;
+}
+
+.exchangeForm__buttonSubmit:hover{
+    background: hsl(351, 8%, 55%);
+    color: hsl(60, 3%, 67%);
 }
 
 .exchangeForm__buttonReset{
@@ -27,6 +33,7 @@
     color: #DEDEDC;
     text-decoration: underline;
     cursor: pointer;
+    transition: color .3s ease-in;
 }
 
 .exchangeForm__buttonReset:hover{
