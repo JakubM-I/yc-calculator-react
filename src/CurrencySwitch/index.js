@@ -1,54 +1,29 @@
 import "./style.css";
+import { currencies } from "../Currencies";
 
 const CurrencySwitch = ({currency, setCurrency}) => {
     return (
+    <>
     <ul className="exchangeForm__items exchangeForm__currencySwitch">
-        <li className="exchangeForm__currencies">
-            <input 
-                id="euro" 
-                type="radio" 
-                name="exchange_rate" 
-                value="1"
-                checked={currency === "1"}
-                onChange={({target}) => setCurrency(target.value)} 
-            />
-            <label 
-                className="exchangeForm__label" 
-                htmlFor="euro">
-                Euro
-            </label>
-        </li>
-        <li className="exchangeForm__currencies">
-            <input 
-                id="dolar" 
-                type="radio" 
-                name="exchange_rate" 
-                value="2"
-                checked={currency === "2"}
-                onChange={({target}) => setCurrency(target.value)}
-            />
-            <label 
-                className="exchangeForm__label" 
-                htmlFor="dolar">
-                Dolar
-            </label>
-        </li>
-        <li className="exchangeForm__currencies">
-            <input 
-                id="frank" 
-                type="radio" 
-                name="exchange_rate" 
-                value="3"
-                checked={currency === "3"}
-                onChange={({target}) => setCurrency(target.value)}
-            />
-            <label 
-                className="exchangeForm__label" 
-                htmlFor="frank">
-                Frank
-            </label>
-        </li>
+        {currencies.map(currencyType => (
+            <li key={currencyType.label} className="exchangeForm__currencies">
+                <input 
+                    id={currencyType.currencyName}
+                    type="radio"
+                    name="currency" 
+                    value={currencyType.label}
+                    checked={currency === currencyType.label}
+                    onChange={({target}) => setCurrency(target.value)}
+                />
+                <label
+                    className="exchangeForm__label"
+                    htmlFor={currencyType.currencyName}>
+                    {currencyType.currencyName}
+                </label>
+            </li>
+        ))}
     </ul>
+    </>
     )
 };
 
