@@ -5,37 +5,20 @@ const Summary = ({convertedAmount, currency}) => {
     return (
         <div className="exchangeForm__items exchangeForm__summary">
             
-                <p className="exchangeForm__summaryResult"
-                >
-                    {Object.keys(convertedAmount).length !== 0 &&(
+            <p className="exchangeForm__summaryResult">
+                {Object.keys(convertedAmount).length !== 0 && (
                     <>
-                    <span>
-                        {`${convertedAmount.currencyIn} 
-                        ${convertedAmount.currencyInLabel} = `}
-                    </span>
-                    <span className="exchangeForm__summaryAmount">
-                        {`${(+convertedAmount.currencyOut).toFixed(2)} 
-                        ${convertedAmount.currencyOutLabel}`}
-                    </span>
+                        <span>
+                            {`${convertedAmount.currencyIn} 
+                            ${convertedAmount.currencyInLabel} = `}
+                        </span>
+                        <span className="exchangeForm__summaryAmount">
+                            {`${(+convertedAmount.currencyOut).toFixed(2)} 
+                            ${convertedAmount.currencyOutLabel}`}
+                        </span>
                     </>
-                    )}
-                </p>
-        
-            {/* <p className={
-                `exchangeForm__summaryResult 
-                ${Object.keys(convertedAmount).length === 0 
-                ? "exchangeForm__summaryResult--disabled" 
-                : ""}`}
-            >
-                <span>
-                    {`${convertedAmount.currencyIn} 
-                    ${convertedAmount.currencyInLabel} = `}
-                </span>
-                <span className="exchangeForm__summaryAmount">
-                    {`${(+convertedAmount.currencyOut).toFixed(2)} 
-                    ${convertedAmount.currencyOutLabel}`}
-                </span>
-            </p> */}
+                )}
+            </p>
             <p className="exchangeForm__summaryInformation">
                 1 PLN = 
                 <span>
