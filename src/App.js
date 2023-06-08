@@ -12,26 +12,31 @@ import { currencies } from './Currencies';
 
 function App() {
   const [amount, setAmount] = useState(1);
-  const [currency, setCurrency] = useState("1");
-  const [convertedAmount, setConvertedAmount] = useState({})
+  const [currency, setCurrency] = useState(currencies[0].label);
+  const [convertedAmount, setConvertedAmount] = useState({});
+
+  const calculateResult = () => {
+    const selectedCurrency = currencies.find(({label}) => currency === label )
+
+    setConvertedAmount({
+      currencyIn: amount,
+      currencyInLabel: "PLN",
+      currencyOut: `${(amount * (1 / selectedCurrency.currencyRate))}`,
+      currencyOutLabel: selectedCurrency.label,
+      exchangeRate: selectedCurrency.currencyRate,
+      rate: `${(1 / selectedCurrency.currencyRate)}`,
+    });
+  };
 
   const formSubmit = (event) => {
     event.preventDefault();
 
-    setConvertedAmount(convertedAmount => ({
-      currencyIn: amount,
-      currencyInLabel: "PLN",
-      currencyOut: `${(amount * (1 / currencies[currency - 1].currencyRate))}`,
-      currencyOutLabel: `${currencies[currency - 1].label}`,
-      exchangeRate: `${currencies[currency - 1].currencyRate}`,
-      rate: `${(1 / currencies[currency - 1].currencyRate)}`,
-    }));
-  
+    calculateResult();
   };
   
   const calcReset = () => {
     setAmount(1);
-    setCurrency("1");
+    setCurrency(currencies[0].id);
     setConvertedAmount({})
   };
 
