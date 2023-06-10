@@ -26,14 +26,27 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
             <legend className="exchangeForm__legend">Przelicz złotówki na wybraną walutę</legend>
                 <div className="exchangeForm__itemSet">
                     <div className="exchangeForm__form">
-                        <ConvertedAmount amount={amount} setAmount={setAmount} />
+                        <ConvertedAmount 
+                            amount={amount} 
+                            setAmount={setAmount} 
+                        />
                         <img className="exchangeForm__arrow" src={arrow} alt="" />
-                        <CurrencySwitch currency={currency} setCurrency={setCurrency} />
+                        <CurrencySwitch 
+                            currency={currency} 
+                            setCurrency={setCurrency} 
+                        />
                     </div>
-                    <Summary convertedAmount={convertedAmount} currency={currency} />
+                    <Summary 
+                        convertedAmount={convertedAmount} 
+                        currency={currency} 
+                    />
                 </div>
             </FieldSet>
-            <Buttons calcReset={calcReset} setAmount={setAmount} setCurrency={setCurrency} />
+            <Buttons 
+                calcReset={calcReset} 
+                setAmount={setAmount} 
+                setCurrency={setCurrency} 
+            />
         </form>
     )
 };
