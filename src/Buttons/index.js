@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Buttons = ({calcReset}) => (
+const Buttons = ({calcReset, setAmount, setCurrency}) => (
     <>
         <button 
             className="exchangeForm__buttonSubmit" 
@@ -8,7 +8,7 @@ const Buttons = ({calcReset}) => (
             Wylicz
         </button>
         <button 
-            onClick={calcReset}
+            onClick={() => calcReset(setAmount, setCurrency)}
             className="exchangeForm__buttonReset" 
             type="reset">
             Resetuj kalkulator

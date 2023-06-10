@@ -4,11 +4,10 @@ import Form from './Form';
 import { currencies } from './Currencies';
 
 function App() {
-  const [amount, setAmount] = useState(1);
-  const [currency, setCurrency] = useState(currencies[0].label);
+
   const [convertedAmount, setConvertedAmount] = useState({});
 
-  const calculateResult = () => {
+  const calculateResult = (amount, currency) => {
     const selectedCurrency = currencies.find(({label}) => currency === label )
 
     setConvertedAmount({
@@ -20,14 +19,8 @@ function App() {
       rate: `${(1 / selectedCurrency.currencyRate)}`,
     });
   };
-
-  const formSubmit = (event) => {
-    event.preventDefault();
-
-    calculateResult();
-  };
   
-  const calcReset = () => {
+  const calcReset = (setAmount, setCurrency) => {
     setAmount(1);
     setCurrency(currencies[0].id);
     setConvertedAmount({})
@@ -37,11 +30,7 @@ function App() {
     <div className="exchangeCalculator">
       <h1 className="exchangeCalculator__title">Kalkuator walutowy</h1>
       <Form 
-        formSubmit={formSubmit}
-        amount={amount}
-        setAmount={setAmount}
-        currency={currency}
-        setCurrency={setCurrency}
+        calculateResult={calculateResult}
         convertedAmount={convertedAmount}
         calcReset={calcReset}
       />
