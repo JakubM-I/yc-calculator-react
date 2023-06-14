@@ -2,15 +2,15 @@ import "./style.css";
 import { currencies } from "../Currencies";
 
 const Summary = ({convertedAmount}) => {
-    const selectedCurrencyPrice = `${Object.keys(convertedAmount).length === 0 
+    const summaryCurrencyPrice = `${Object.keys(convertedAmount).length === 0 
         ? (1 / currencies[0].currencyRate).toFixed(3) 
         : (+convertedAmount.rate).toFixed(3)}`;
 
-    const selectedCurrency = `${Object.keys(convertedAmount).length === 0 
+    const summaryCurrency = `${Object.keys(convertedAmount).length === 0 
         ? (currencies[0].label) 
         : (convertedAmount.currencyOutLabel)}`;
 
-    const selectedCurrencyRate = `${Object.keys(convertedAmount).length === 0 
+    const summaryCurrencyRate = `${Object.keys(convertedAmount).length === 0 
         ? (currencies[0].currencyRate).toFixed(3) 
         : (+convertedAmount.exchangeRate).toFixed(3)}`;
     
@@ -32,8 +32,8 @@ const Summary = ({convertedAmount}) => {
                 )}
             </p>
             <p className="exchangeForm__summaryInformation">
-                1 PLN = {selectedCurrencyPrice} {selectedCurrency}{" "}
-                według średniego kursu NBP {selectedCurrencyRate}{" "}
+                1 PLN = {summaryCurrencyPrice} {summaryCurrency}{" "}
+                według średniego kursu NBP {summaryCurrencyRate}{" "}
                 PLN z dnia 19.08.2022r.</p>
         </div>
     )
