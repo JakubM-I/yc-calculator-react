@@ -12,7 +12,6 @@ const Clock = () => {
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
-        
         const timeUpdate = setInterval(() => {
             const nowDate = new Date();
 
@@ -32,11 +31,12 @@ const Clock = () => {
     };
 
     const currentDay = () => {
-        return weekDays.filter(weekDay => (weekDays.indexOf(weekDay) + 1)=== day);
+        return weekDays.filter(weekDay => (weekDays.indexOf(weekDay) + 1) === day);
     };
 
     return (
-        <p className="exchangeForm__clock">Dziś jest{" "}
+        <p className="exchangeForm__clock">
+            Dziś jest{" "}
             <span className="exchangeForm__clock--day">{currentDay()}</span>{", "}
             {currentDate.toLocaleString([], {day: "numeric", month: "long"})}{", "}
             {timeFormat(hour)}{" : "}
