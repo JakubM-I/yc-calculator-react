@@ -7,6 +7,7 @@ import CurrencySwitch from '../CurrencySwitch';
 import Summary from '../Summary';
 import Buttons from '../Buttons';
 import { currencies } from "../Currencies";
+import Clock from "../Clock";
 
 const Form = ({calculateResult, convertedAmount, calcReset}) => {
     const [amount, setAmount] = useState(1);
@@ -22,7 +23,9 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
         <form
             onSubmit={formSubmit}
             className="exchangeForm">
+           <Clock />
             <FieldSet>
+            
             <legend className="exchangeForm__legend">Przelicz złotówki na wybraną walutę</legend>
                 <div className="exchangeForm__itemSet">
                     <div className="exchangeForm__form">
