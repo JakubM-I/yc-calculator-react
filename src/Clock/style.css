@@ -1,0 +1,11 @@
+.exchangeForm__clock{
+    text-align: right;
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 0px;
+    padding-right: 5px;
+}
+
+.exchangeForm__clock--day{
+    text-transform: lowercase;
+}

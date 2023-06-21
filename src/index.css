@@ -7,10 +7,13 @@ html {
   box-sizing: inherit;
 }
 
-body{
+#root{
   background-image: url(./picture/background-img.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

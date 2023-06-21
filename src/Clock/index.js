@@ -28,7 +28,7 @@ const Clock = () => {
     }, [])
 
     const timeFormat = (number) => {
-        return number.toLocaleString([], {minimumintegerdigits: 2})
+        return number.toLocaleString([], { minimumIntegerDigits: 2 });
     };
 
     const currentDay = () => {
@@ -36,9 +36,9 @@ const Clock = () => {
     };
 
     return (
-        <p>Dziś jest:{" "}
-            {currentDay()}{", "}
-            {currentDate.toLocaleString([], {day: "numeric", month: "long", year: "numeric"})}{", "}
+        <p className="exchangeForm__clock">Dziś jest{" "}
+            <span className="exchangeForm__clock--day">{currentDay()}</span>{", "}
+            {currentDate.toLocaleString([], {day: "numeric", month: "long"})}{", "}
             {timeFormat(hour)}{" : "}
             {timeFormat(minutes)}{" : "}
             {timeFormat(seconds)}

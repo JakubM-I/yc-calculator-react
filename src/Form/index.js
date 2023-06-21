@@ -23,9 +23,9 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
         <form
             onSubmit={formSubmit}
             className="exchangeForm">
-           <Clock />
+           
             <FieldSet>
-            
+            <Clock />
             <legend className="exchangeForm__legend">Przelicz złotówki na wybraną walutę</legend>
                 <div className="exchangeForm__itemSet">
                     <div className="exchangeForm__form">
