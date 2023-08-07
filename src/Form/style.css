@@ -23,7 +23,7 @@
     font-size: min(max(4.26vw, 13px), 16px);
   }
   
-  @media screen and (max-width: 549px) {
+  @media screen and (max-width: 599px) {
     .exchangeForm__legend{
         left: 50%;
         transform: translateX(-50%);
