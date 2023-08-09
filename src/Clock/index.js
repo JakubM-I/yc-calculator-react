@@ -1,13 +1,13 @@
 import { useCurrentTime } from "./useCurrentTime";
-import "./style.css"
+import { StyledClock } from "./styled";
 
 const Clock = () => {
 
     const [time, timeFormat] = useCurrentTime()
     return (
-        <p className="exchangeForm__clock">
+        <StyledClock className="exchangeForm__clock">
             Dziś jest{" "}{timeFormat(time)}
-        </p>
+        </StyledClock>
     );
 };
 
