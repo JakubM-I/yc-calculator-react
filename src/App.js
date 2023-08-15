@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Form from './Form';
 import { currencies } from './Currencies';
+import { StyledCalculator } from './Styled/StyledGlobal';
 
 function App() {
   const [convertedAmount, setConvertedAmount] = useState({});
@@ -26,14 +27,17 @@ function App() {
   };
 
   return (
-    <div className="exchangeCalculator">
-      <h1 className="exchangeCalculator__title">Kalkuator walutowy</h1>
-      <Form 
-        calculateResult={calculateResult}
-        convertedAmount={convertedAmount}
-        calcReset={calcReset}
-      />
-    </div>
+    <>
+      <StyledCalculator  />
+      <div className="exchangeCalculator">
+        <h1 className="exchangeCalculator__title">Kalkuator walutowy</h1>
+        <Form 
+          calculateResult={calculateResult}
+          convertedAmount={convertedAmount}
+          calcReset={calcReset}
+        />
+      </div>
+    </>
   );
 };
 
