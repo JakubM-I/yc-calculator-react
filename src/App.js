@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import './App.css';
 import Form from './Form';
 import { currencies } from './Currencies';
 import { StyledCalculator } from './Styled/StyledGlobal';
