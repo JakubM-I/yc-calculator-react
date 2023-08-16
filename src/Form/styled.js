@@ -1,16 +1,16 @@
-.exchangeForm{
+import styled from 'styled-components';
+
+export const StyledForm = styled.form`
     max-width: 630px;
     width: 100%;
     margin: 25px auto 0;
-  }
-  
-  @media screen and (max-width: 450px) {
-    .exchangeForm{
+
+    @media(max-width: 450px){
         flex-direction: column;
     }
-  }
-  
-  .exchangeForm__legend{
+`;
+
+export const StyledLegend = styled.legend`
     padding: 8px;
     border: none;
     border-radius: 10px;
@@ -21,53 +21,45 @@
     top: 15px;
     left: 15px;
     font-size: min(max(4.26vw, 13px), 16px);
-  }
-  
-  @media screen and (max-width: 599px) {
-    .exchangeForm__legend{
+    
+    @media(max-width: 599px){
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
         top: 45px;
         text-align: center;
     }
-  }
-  
-  .exchangeForm__arrow{
+`;
+
+export const StyledArrow  = styled.img`
     width: 40px;
     margin: 0 20px;
-  }
-  
-  @media screen and (max-width: 450px) {
-    .exchangeForm__arrow{
+
+    @media(max-width: 450px){
         display: none;
     }
-  }
-  
-.exchangeForm__itemSet{
+`;
+
+export const StyledWrapper = styled.div`
     min-height: 215px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
 
-@media screen and (max-width: 450px) {
-    .exchangeForm__itemSet{
+    @media(max-width: 450px){
         min-height: 255px;
     }
-}
+`;
 
-.exchangeForm__form{
+export const StyledFormElements = styled.div`
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     margin-top: 35px;
-}
 
-@media screen and (max-width: 450px) {
-    .exchangeForm__form{
+    @media(max-width: 450px){
         flex-direction: column;
-        margin-top: 60px;
+        margin-top: 60px;   
     }
-}
+`;

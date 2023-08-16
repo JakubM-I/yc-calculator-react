@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./style.css";
 import arrow from "../picture/arrow-icon.png";
 import FieldSet from '../Fieldset';
 import ConvertedAmount from '../ConvertedAmount';
@@ -8,6 +7,8 @@ import Summary from '../Summary';
 import Buttons from '../Buttons';
 import { currencies } from "../Currencies";
 import Clock from "../Clock";
+import { StyledForm, StyledLegend, StyledArrow, StyledWrapper, StyledFormElements } from "./styled";
+
 
 const Form = ({calculateResult, convertedAmount, calcReset}) => {
     const [amount, setAmount] = useState(1);
@@ -20,37 +21,34 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
       };
     
     return (
-        <form
-            onSubmit={formSubmit}
-            className="exchangeForm">
-           
+        <StyledForm onSubmit={formSubmit}>         
             <FieldSet>
             <Clock />
-            <legend className="exchangeForm__legend">Przelicz złotówki na wybraną walutę</legend>
-                <div className="exchangeForm__itemSet">
-                    <div className="exchangeForm__form">
+            <StyledLegend>Przelicz złotówki na wybraną walutę</StyledLegend>
+                <StyledWrapper>
+                    <StyledFormElements>
                         <ConvertedAmount 
                             amount={amount} 
                             setAmount={setAmount} 
                         />
-                        <img className="exchangeForm__arrow" src={arrow} alt="" />
+                        <StyledArrow src={arrow} alt="" />
                         <CurrencySwitch 
                             currency={currency} 
                             setCurrency={setCurrency} 
                         />
-                    </div>
+                    </StyledFormElements>
                     <Summary 
                         convertedAmount={convertedAmount} 
                         currency={currency} 
                     />
-                </div>
+                </StyledWrapper>
             </FieldSet>
             <Buttons 
                 calcReset={calcReset} 
                 setAmount={setAmount} 
                 setCurrency={setCurrency} 
             />
-        </form>
+        </StyledForm>
     )
 };
 
