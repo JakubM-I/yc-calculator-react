@@ -5,7 +5,7 @@ const Clock = () => {
 
     const [time, timeFormat] = useCurrentTime()
     return (
-        <StyledClock className="exchangeForm__clock">
+        <StyledClock>
             Dziś jest{" "}{timeFormat(time)}
         </StyledClock>
     );

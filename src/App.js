@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import './App.css';
+// import './App.css';
 import Form from './Form';
 import { currencies } from './Currencies';
 import { StyledCalculator } from './Styled/StyledGlobal';
+import { StyledApp } from './Styled/StyledApp';
 
 function App() {
   const [convertedAmount, setConvertedAmount] = useState({});
@@ -29,14 +30,14 @@ function App() {
   return (
     <>
       <StyledCalculator  />
-      <div className="exchangeCalculator">
-        <h1 className="exchangeCalculator__title">Kalkuator walutowy</h1>
+      <StyledApp>
+        <h1>Kalkuator walutowy</h1>
         <Form 
           calculateResult={calculateResult}
           convertedAmount={convertedAmount}
           calcReset={calcReset}
         />
-      </div>
+      </StyledApp>
     </>
   );
 };

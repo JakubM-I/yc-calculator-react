@@ -1,18 +1,17 @@
-import "./style.css";
+// import "./style.css";
+import { StyledButtonSubmit, StyledButtonReset } from "./styled";
 
 const Buttons = ({calcReset, setAmount, setCurrency}) => (
     <>
-        <button 
-            className="exchangeForm__buttonSubmit" 
+        <StyledButtonSubmit  
             type="submit">
             Wylicz
-        </button>
-        <button 
+        </StyledButtonSubmit>
+        <StyledButtonReset 
             onClick={() => calcReset(setAmount, setCurrency)}
-            className="exchangeForm__buttonReset" 
             type="reset">
             Resetuj kalkulator
-        </button>
+        </StyledButtonReset>
     </>
 );
 

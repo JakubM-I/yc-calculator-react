@@ -1,4 +1,6 @@
-.exchangeForm__buttonSubmit{
+import styled from 'styled-components';
+
+export const StyledButtonSubmit  = styled.button`
     width: 150px;
     padding: 15px 10px;
     display: block;
@@ -12,14 +14,14 @@
     font-weight: 600;
     cursor: pointer;
     transition: background-color .3s ease-in, color .3s ease-in;
-}
 
-.exchangeForm__buttonSubmit:hover{
-    background: hsl(351, 8%, 55%);
-    color: hsl(60, 3%, 67%);
-}
+    &:hover{
+        background: #958386;
+        color: #adada8;
+    }
+`;
 
-.exchangeForm__buttonReset{
+export const StyledButtonReset = styled.button`
     width: fit-content;
     display: block;
     background: #61535582;
@@ -34,8 +36,8 @@
     text-decoration: underline;
     cursor: pointer;
     transition: color .3s ease-in;
-}
 
-.exchangeForm__buttonReset:hover{
-    color: hsl(60, 3%, 77%);
-}
+    &:hover{
+        color: #c6c6c3;
+    }
+`;

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import background from "../picture/background-img.jpg"
 
 export const StyledCalculator = createGlobalStyle`
     html {
@@ -11,7 +12,7 @@ export const StyledCalculator = createGlobalStyle`
     }
 
     #root{
-        background-image: url(./picture/background-img.jpg);
+        background-image: url("${background}");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
