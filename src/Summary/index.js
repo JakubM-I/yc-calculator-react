@@ -1,4 +1,5 @@
-import "./style.css";
+// import "./style.css";
+import { StyledSummary, StyledResult, StyledSummaryAmount, StyledSummaryInformation } from "./styled";
 import { currencies } from "../Currencies";
 
 const Summary = ({convertedAmount}) => {
@@ -15,27 +16,27 @@ const Summary = ({convertedAmount}) => {
         : (+convertedAmount.exchangeRate).toFixed(3)}`;
     
     return (
-        <div className="exchangeForm__items exchangeForm__summary">
+        <StyledSummary>
             
-            <p className="exchangeForm__summaryResult">
+            <StyledResult>
                 {Object.keys(convertedAmount).length !== 0 && (
                     <>
                         <span>
                             {`${convertedAmount.currencyIn} 
                             ${convertedAmount.currencyInLabel} = `}
                         </span>
-                        <span className="exchangeForm__summaryAmount">
+                        <StyledSummaryAmount>
                             {`${(+convertedAmount.currencyOut).toFixed(2)} 
                             ${convertedAmount.currencyOutLabel}`}
-                        </span>
+                        </StyledSummaryAmount>
                     </>
                 )}
-            </p>
-            <p className="exchangeForm__summaryInformation">
+            </StyledResult>
+            <StyledSummaryInformation>
                 1 PLN = {summaryCurrencyPrice} {summaryCurrency}{" "}
                 według średniego kursu NBP {summaryCurrencyRate}{" "}
-                PLN z dnia 19.08.2022r.</p>
-        </div>
+                PLN z dnia 19.08.2022r.</StyledSummaryInformation>
+        </StyledSummary>
     )
 };
 
