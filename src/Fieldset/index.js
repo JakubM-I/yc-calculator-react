@@ -1,9 +1,10 @@
-import "./style.css";
+// import "./style.css";
+import { StyledFieldSet } from "./styled";
 
 const FieldSet = ({children}) => (
-    <fieldset className="exchangeForm__dataInput">
+    <StyledFieldSet>
         {children}
-    </fieldset>
+    </StyledFieldSet>
 );
 
 export default FieldSet;
