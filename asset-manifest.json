@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/yc-calculator-react/static/css/main.d0a1b587.css",
-    "main.js": "/yc-calculator-react/static/js/main.39818ecf.js",
+    "main.js": "/yc-calculator-react/static/js/main.f4444b44.js",
     "static/js/787.601bb919.chunk.js": "/yc-calculator-react/static/js/787.601bb919.chunk.js",
     "static/media/background-img.jpg": "/yc-calculator-react/static/media/background-img.6095de723a8371091d67.jpg",
     "index.html": "/yc-calculator-react/index.html",
-    "main.d0a1b587.css.map": "/yc-calculator-react/static/css/main.d0a1b587.css.map",
-    "main.39818ecf.js.map": "/yc-calculator-react/static/js/main.39818ecf.js.map",
+    "main.f4444b44.js.map": "/yc-calculator-react/static/js/main.f4444b44.js.map",
     "787.601bb919.chunk.js.map": "/yc-calculator-react/static/js/787.601bb919.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0a1b587.css",
-    "static/js/main.39818ecf.js"
+    "static/js/main.f4444b44.js"
   ]
 }
