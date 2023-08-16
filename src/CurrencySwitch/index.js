@@ -1,13 +1,13 @@
-import "./style.css";
 import { currencies } from "../Currencies";
+import { StyledSwitch, StyledItem, StyledCurrencyLabel, StyledInput } from "./styled";
 
 const CurrencySwitch = ({currency, setCurrency}) => {
     return (
         <>
-            <ul className="exchangeForm__items exchangeForm__currencySwitch">
+            <StyledSwitch>
                 {currencies.map(currencyType => (
-                    <li key={currencyType.label} className="exchangeForm__currencies">
-                        <input
+                    <StyledItem key={currencyType.label}>
+                        <StyledInput
                             id={currencyType.currencyName}
                             type="radio"
                             name="currency"
@@ -15,14 +15,13 @@ const CurrencySwitch = ({currency, setCurrency}) => {
                             checked={currency === currencyType.label}
                             onChange={({ target }) => setCurrency(target.value)}
                         />
-                        <label
-                            className="exchangeForm__label"
+                        <StyledCurrencyLabel
                             htmlFor={currencyType.currencyName}>
                             {currencyType.currencyName}
-                        </label>
-                    </li>
+                        </StyledCurrencyLabel>
+                    </StyledItem>
                 ))}
-            </ul>
+            </StyledSwitch>
         </>
     )
 };

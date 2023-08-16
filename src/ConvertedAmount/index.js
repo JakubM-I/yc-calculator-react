@@ -1,12 +1,11 @@
-import "./style.css";
+import { StyledLabel, StyledAmountInput } from "./styled";
 
 const ConvertedAmount = ({amount, setAmount}) => {
     return (
-    <label className="exchangeForm__items exchangeForm__convertedLabel">
+    <StyledLabel>
         Kwota w PLN: 
-        <input 
-            type="number" 
-            className="exchangeForm__convertedAmount" 
+        <StyledAmountInput 
+            type="number"  
             placeholder="Wpisz kwotę" 
             required 
             value={amount} 
@@ -14,7 +13,7 @@ const ConvertedAmount = ({amount, setAmount}) => {
             step="0.01" 
             min="0"
         />
-    </label>
+    </StyledLabel>
     )
 };
 

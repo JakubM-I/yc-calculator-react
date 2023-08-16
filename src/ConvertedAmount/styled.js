@@ -1,9 +1,11 @@
-.exchangeForm__convertedLabel{
+import styled from 'styled-components';
+
+export const StyledLabel = styled.label`
     text-align: center;
     font-size:min(max(6.10vw, 16px), 20px);
-}
+`;
 
-.exchangeForm__convertedAmount{
+export const StyledAmountInput = styled.input`
     width: 120px;
     height: 50px;
     font-size: 22px;
@@ -11,8 +13,8 @@
     border-radius: 5px;
     border: 1px solid #000;  
     margin-left: 5px; 
-}
 
-.exchangeForm__convertedAmount::placeholder{
-    font-size: 14px;
-}
+    &::placeholder{
+        font-size: 14px;
+    }
+`;

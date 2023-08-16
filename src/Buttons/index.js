@@ -1,4 +1,3 @@
-// import "./style.css";
 import { StyledButtonSubmit, StyledButtonReset } from "./styled";
 
 const Buttons = ({calcReset, setAmount, setCurrency}) => (
