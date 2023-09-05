@@ -35,7 +35,7 @@ const Summary = ({convertedAmount}) => {
             <StyledSummaryInformation>
                 1 PLN = {summaryCurrencyPrice} {summaryCurrency}{" "}
                 według średniego kursu NBP {summaryCurrencyRate}{" "}
-                PLN z dnia 19.08.2022r.</StyledSummaryInformation>
+                PLN z dnia {convertedAmount.data}r.</StyledSummaryInformation>
         </StyledSummary>
     )
 };

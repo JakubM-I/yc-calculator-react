@@ -15,10 +15,11 @@ function App() {
     setConvertedAmount({
       currencyIn: amount,
       currencyInLabel: "PLN",
-      currencyOut: `${(amount * (1 / selectedCurrency.currencyRate))}`,
+      currencyOut: `${(amount * (1 / calcData.rateRates[currency]))}`,
       currencyOutLabel: selectedCurrency.label,
-      exchangeRate: selectedCurrency.currencyRate,
-      rate: `${(1 / selectedCurrency.currencyRate)}`,
+      exchangeRate: calcData.rateRates[currency],
+      rate: `${(1 / calcData.rateRates[currency])}`,
+      data: calcData.rateDate,
     });
   };
   
