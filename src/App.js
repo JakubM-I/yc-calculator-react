@@ -3,9 +3,11 @@ import Form from './Form';
 import { currencies } from './Currencies';
 import { StyledCalculator } from './Styled/StyledGlobal';
 import { StyledApp } from './Styled/StyledApp';
+import { useRates } from './hooks/useRate';
 
 function App() {
   const [convertedAmount, setConvertedAmount] = useState({});
+  const calcData = useRates();
 
   const calculateResult = (amount, currency) => {
     const selectedCurrency = currencies.find(({label}) => currency === label )
