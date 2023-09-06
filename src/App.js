@@ -19,7 +19,7 @@ function App() {
       currencyOutLabel: selectedCurrency.label,
       exchangeRate: calcData.rateRates[currency],
       rate: `${(1 / calcData.rateRates[currency])}`,
-      data: calcData.rateDate,
+      // data: calcData.rateDate,
     });
   };
   

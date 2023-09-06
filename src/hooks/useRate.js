@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
 export const useRates = () => {
-    const [calcState, setCalcState] = useState();
-    console.log(calcState)
+    const [calcState, setCalcState] = useState({});
+    // console.log(calcState)
     useEffect(() => {
         const importRates = async () => {
             try{
-                const response = await fetch("https://api.exchangerate.host/latest?base=PLN");
+                const response = await fetch("https://api.exchangerate.host/latest?base=PLN&source=ecb");
                 if(!response.ok){
                     throw new Error(response.statusText);
                 }
@@ -19,8 +19,6 @@ export const useRates = () => {
                     rateDate,
                     rateRates,
                 })
-
-                
 
             } catch (error){
                 console.error("Błąd pobrania", error)
