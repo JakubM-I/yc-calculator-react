@@ -1,10 +1,8 @@
 // import "./style.css";
 import { StyledSummary, StyledResult, StyledSummaryAmount, StyledSummaryInformation } from "./styled";
 import { currencies } from "../Currencies";
-import { useRates } from '../hooks/useRate';
 
-const Summary = ({convertedAmount}) => {
-    const calcData = useRates()
+const Summary = ({rateData, convertedAmount}) => {
     const summaryCurrencyPrice = `${Object.keys(convertedAmount).length === 0 
         ? (1 / currencies[0].currencyRate).toFixed(3) 
         : (+convertedAmount.rate).toFixed(3)}`;
@@ -39,7 +37,7 @@ const Summary = ({convertedAmount}) => {
                 według średniego kursu EBC {summaryCurrencyRate}{" "}
                 PLN.</StyledSummaryInformation>
             <StyledSummaryInformation>
-                Tabela kursów aktualna na dzień {calcData.rateDate}r.</StyledSummaryInformation>
+                Tabela kursów aktualna na dzień {rateData.rateDate}r.</StyledSummaryInformation>
         </StyledSummary>
     )
 };

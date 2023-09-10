@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
-export const useRates = () => {
-    const [calcState, setCalcState] = useState({});
+export const useRatesData = () => {
+    const [calcState, setCalcState] = useState({
+        status: "loading",
+    });
     // console.log(calcState)
     useEffect(() => {
         const importRates = async () => {
@@ -16,6 +18,7 @@ export const useRates = () => {
                 const rateRates = data.rates;
 
                 setCalcState({
+                    status: "succes",
                     rateDate,
                     rateRates,
                 })

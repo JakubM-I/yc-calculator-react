@@ -3,23 +3,21 @@ import Form from './Form';
 import { currencies } from './Currencies';
 import { StyledCalculator } from './Styled/StyledGlobal';
 import { StyledApp } from './Styled/StyledApp';
-import { useRates } from './hooks/useRate';
+import { useRatesData } from './hooks/useRate';
 
 function App() {
   const [convertedAmount, setConvertedAmount] = useState({});
-  const calcData = useRates();
+  const calcData = useRatesData();
 
   const calculateResult = (amount, currency) => {
-    const selectedCurrency = currencies.find(({label}) => currency === label )
 
     setConvertedAmount({
       currencyIn: amount,
       currencyInLabel: "PLN",
       currencyOut: `${(amount * (1 / calcData.rateRates[currency]))}`,
-      currencyOutLabel: selectedCurrency.label,
+      currencyOutLabel: currency,
       exchangeRate: calcData.rateRates[currency],
       rate: `${(1 / calcData.rateRates[currency])}`,
-      // data: calcData.rateDate,
     });
   };
   
