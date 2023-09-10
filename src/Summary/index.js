@@ -2,18 +2,18 @@
 import { StyledSummary, StyledResult, StyledSummaryAmount, StyledSummaryInformation } from "./styled";
 import { currencies } from "../Currencies";
 
-const Summary = ({rateData, convertedAmount}) => {
+const Summary = ({rateData, convertedAmount, currency}) => {
     const summaryCurrencyPrice = `${Object.keys(convertedAmount).length === 0 
-        ? (1 / currencies[0].currencyRate).toFixed(3) 
+        ? (rateData.rateRates[currency]).toFixed(3) 
         : (+convertedAmount.rate).toFixed(3)}`;
 
     const summaryCurrency = `${Object.keys(convertedAmount).length === 0 
-        ? (currencies[0].label) 
+        ? (currency) 
         : (convertedAmount.currencyOutLabel)}`;
 
-    const summaryCurrencyRate = `${Object.keys(convertedAmount).length === 0 
-        ? (currencies[0].currencyRate).toFixed(3) 
-        : (+convertedAmount.exchangeRate).toFixed(3)}`;
+    // const summaryCurrencyRate = `${Object.keys(convertedAmount).length === 0 
+    //     ? (currencies[0].currencyRate).toFixed(3) 
+    //     : (+convertedAmount.exchangeRate).toFixed(3)}`;
     
     return (
         <StyledSummary>
@@ -34,8 +34,8 @@ const Summary = ({rateData, convertedAmount}) => {
             </StyledResult>
             <StyledSummaryInformation>
                 1 PLN = {summaryCurrencyPrice} {summaryCurrency}{" "}
-                według średniego kursu EBC {summaryCurrencyRate}{" "}
-                PLN.</StyledSummaryInformation>
+                według średniego kursu EBC.
+            </StyledSummaryInformation>
             <StyledSummaryInformation>
                 Tabela kursów aktualna na dzień {rateData.rateDate}r.</StyledSummaryInformation>
         </StyledSummary>

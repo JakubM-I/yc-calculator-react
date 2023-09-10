@@ -15,14 +15,8 @@ const CurrencySwitch = ({rateData, currency, setCurrency}) => {
                 onChange={({target}) => setCurrency(target.value)}
             >
                 {Object.keys(rateData.rateRates).map(currency => (
-                    <option value={currency}>{currency}</option>
+                    <option key={currency} value={currency}>{currency}</option>
                 ))}
-                 {/* <option value="USD">USD</option>
-                 <option value="EUR">EUR</option>
-                 <option value="CHF">CHF</option> */}
-                {/* {Object.keys(currencies.rates).map(currency => (
-                    <option value={currency}>{currency}</option>
-                ))} */}
             </select>
             {/* <StyledSwitch>
                 {currencies.map(currencyType => ( 
