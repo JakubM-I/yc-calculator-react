@@ -3,7 +3,7 @@ import Form from './Form';
 import { currencies } from './Currencies';
 import { StyledCalculator } from './Styled/StyledGlobal';
 import { StyledApp } from './Styled/StyledApp';
-import { useRatesData } from './hooks/useRate';
+import { useRatesData } from './hooks/useRatesData';
 
 function App() {
   const [convertedAmount, setConvertedAmount] = useState({});
@@ -14,10 +14,10 @@ function App() {
     setConvertedAmount({
       currencyIn: amount,
       currencyInLabel: "PLN",
-      currencyOut: `${(amount * calcData.rateRates[currency])}`,
+      currencyOut: `${(amount * calcData.rates[currency])}`,
       currencyOutLabel: currency,
-      exchangeRate: calcData.rateRates[currency],
-      rate: `${(calcData.rateRates[currency])}`,
+      exchangeRate: calcData.rates[currency],
+      rate: `${(calcData.rates[currency])}`,
     });
   };
   

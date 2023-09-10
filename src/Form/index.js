@@ -8,7 +8,7 @@ import Buttons from '../Buttons';
 import { currencies } from "../Currencies";
 import Clock from "../Clock";
 import { StyledForm, StyledLegend, StyledArrow, StyledWrapper, StyledFormElements } from "./styled";
-import { useRatesData } from "../hooks/useRate";
+import { useRatesData } from "../hooks/useRatesData";
 
 const Form = ({calculateResult, convertedAmount, calcReset}) => {
     const [amount, setAmount] = useState(1);

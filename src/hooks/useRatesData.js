@@ -13,14 +13,12 @@ export const useRatesData = () => {
                     throw new Error(response.statusText);
                 }
 
-                const data = await response.json();
-                const rateDate = data.date;
-                const rateRates = data.rates;
+                const {date, rates} = await response.json();
 
                 setCalcState({
                     status: "succes",
-                    rateDate,
-                    rateRates,
+                    date,
+                    rates,
                 })
 
             } catch (error){
