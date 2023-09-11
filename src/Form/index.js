@@ -7,7 +7,7 @@ import Summary from '../Summary';
 import Buttons from '../Buttons';
 import { currencies } from "../Currencies";
 import Clock from "../Clock";
-import { StyledForm, StyledTitle, StyledArrow, StyledWrapper, StyledFormElements, StyledLoadingInfo } from "./styled";
+import { StyledForm, StyledTitle, StyledArrow, StyledWrapper, StyledFormElements, StyledStatusInfo } from "./styled";
 import { useRatesData } from "../hooks/useRatesData";
 import { Waveform } from '@uiball/loaders'
 
@@ -28,7 +28,7 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
             <Clock />
             <StyledTitle>Przelicz złotówki na wybraną walutę</StyledTitle>
                 {rateData.status === "loading" ? (
-                    <StyledLoadingInfo>                     
+                    <StyledStatusInfo>                     
                         <Waveform 
                             size={40}
                             lineWeight={3.5}
@@ -36,7 +36,12 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
                             color="black" 
                         />
                         <p>Momencik... Ładujemy najnowsze dane by wynik zawsze był aktualny</p>
-                    </StyledLoadingInfo>
+                    </StyledStatusInfo>
+                ) : rateData.status === "fail" ? (
+                    <StyledStatusInfo>
+                        <p>Upss.. Coś poszło nie tak. Sprawdź połączenie internetowe i spróbuj odświeżyć stronę.</p>
+                    </StyledStatusInfo>
+
                 ) : (
                     <StyledWrapper>
                     <StyledFormElements>

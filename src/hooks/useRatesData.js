@@ -16,17 +16,20 @@ export const useRatesData = () => {
                 const {date, rates} = await response.json();
 
                 setCalcState({
-                    status: "succes",
+                    status: "success",
                     date,
                     rates,
                 })
 
             } catch (error){
                 console.error("Błąd pobrania", error)
-            }
-        }
+                setCalcState({
+                    status: "fail",
+                });
+            };
+        };
 
-        setTimeout(importRates, 1000)
+        setTimeout(importRates, 2000)
 
     }, [])
     return calcState;

@@ -18,7 +18,7 @@ export const StyledTitle = styled.h2`
     font-size: min(max(4.26vw, 13px), 16px);
 `;
 
-export const StyledLoadingInfo = styled.div`
+export const StyledStatusInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
