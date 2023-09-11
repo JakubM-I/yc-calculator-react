@@ -10,33 +10,24 @@ export const StyledForm = styled.form`
     }
 `;
 
-export const StyledLegend = styled.legend`
+export const StyledTitle = styled.h2`
     padding: 8px;
-    border: none;
-    border-radius: 10px;
-    background: #DEDEDC;
-    box-shadow: 0px 0px 10px -4px;
+    text-align: center;
+    background: #dededc70;
     color:#615355;
-    position: absolute;
-    top: 15px;
-    left: 15px;
     font-size: min(max(4.26vw, 13px), 16px);
-    
-    @media(max-width: 599px){
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        top: 45px;
-        text-align: center;
-    }
 `;
 
 export const StyledLoadingInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-block-start: 10px;
-    margin-block-end: 15px;
+    margin-block: 15px;
+
+    p{
+        font-size: min(max(4.26vw, 13px), 16px);
+        text-align: center;
+    }
 `;
 
 export const StyledArrow  = styled.img`
