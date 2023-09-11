@@ -31,6 +31,14 @@ export const StyledLegend = styled.legend`
     }
 `;
 
+export const StyledLoadingInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 10px;
+    margin-block-end: 15px;
+`;
+
 export const StyledArrow  = styled.img`
     width: 40px;
     margin: 0 20px;
