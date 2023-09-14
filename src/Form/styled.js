@@ -59,6 +59,7 @@ export const StyledFormElements = styled.div`
 
     @media(max-width: 450px){
         flex-direction: column;
-        margin-top: 60px;   
+        margin-top: 25px;
+        gap: 5px;
     }
 `;

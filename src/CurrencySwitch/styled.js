@@ -29,3 +29,16 @@ export const StyledInput = styled.input.attrs({type: "radio"})`
         color: #615355;
     }
 `;
+
+export const StyleCurrencySelect = styled.select`
+    width: 120px;
+    height: 50px;
+    font-size: 22px;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid #000;
+
+    @media(max-width: 450px){
+        width: calc(100% - 1em);
+    }
+`;

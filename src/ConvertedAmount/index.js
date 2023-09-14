@@ -1,10 +1,11 @@
-import { StyledLabel, StyledAmountInput } from "./styled";
+import { StyledLabel, StyledAmountInput, StyledAmountWrapper } from "./styled";
 
 const ConvertedAmount = ({amount, setAmount}) => {
     return (
-    <StyledLabel>
-        Kwota w PLN: 
+
+    <StyledAmountWrapper as="div">
         <StyledAmountInput 
+            id="amountInput"
             type="number"  
             placeholder="Wpisz kwotę" 
             required 
@@ -13,7 +14,11 @@ const ConvertedAmount = ({amount, setAmount}) => {
             step="0.01" 
             min="0"
         />
-    </StyledLabel>
+        <StyledLabel htmlFor="amountInput"> 
+        PLN
+        </StyledLabel>
+     </StyledAmountWrapper>
+
     )
 };
 
