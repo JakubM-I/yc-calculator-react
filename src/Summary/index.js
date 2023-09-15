@@ -3,11 +3,11 @@ import { StyledSummary, StyledResult, StyledSummaryAmount, StyledSummaryInformat
 
 const Summary = ({rateData, convertedAmount, currency}) => {
     const summaryCurrencyPrice = `${Object.keys(convertedAmount).length === 0 
-        ? (rateData.rates[currency]).toFixed(3) 
+        ? (rateData.rates["EUR"]).toFixed(3) 
         : (+convertedAmount.rate).toFixed(3)}`;
 
     const summaryCurrency = `${Object.keys(convertedAmount).length === 0 
-        ? (currency) 
+        ? "EUR"
         : (convertedAmount.currencyOutLabel)}`;
     
     return (
@@ -28,7 +28,7 @@ const Summary = ({rateData, convertedAmount, currency}) => {
                 )}
             </StyledResult>
             <StyledSummaryInformation>
-                1 PLN = {summaryCurrencyPrice} {summaryCurrency}{" "}
+                1 PLN = {summaryCurrencyPrice}{" "}{summaryCurrency}{" "}
                 według średniego kursu EBC.
             </StyledSummaryInformation>
             <StyledSummaryInformation>
