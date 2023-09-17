@@ -40,7 +40,7 @@ export const StyledArrow  = styled.img`
 `;
 
 export const StyledWrapper = styled.div`
-    min-height: 215px;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

@@ -15,11 +15,13 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
     const [amount, setAmount] = useState(1);
     const [currency, setCurrency] = useState("EUR");
     const rateData = useRatesData();
+    const [active, setActive] = useState(false);
 
     const formSubmit = (event) => {
         event.preventDefault();
     
         calculateResult(amount, currency);
+        setActive(true);
       };
     
     return (
@@ -60,6 +62,7 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
                         rateData={rateData}
                         convertedAmount={convertedAmount} 
                         currency={currency} 
+                        active={active}
                     />
                 </StyledWrapper>
                 )}
