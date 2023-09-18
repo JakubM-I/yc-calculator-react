@@ -5,11 +5,11 @@ import ConvertedAmount from '../ConvertedAmount';
 import CurrencySwitch from '../CurrencySwitch';
 import Summary from '../Summary';
 import Buttons from '../Buttons';
-import { currencies } from "../Currencies";
 import Clock from "../Clock";
-import { StyledForm, StyledTitle, StyledArrow, StyledWrapper, StyledFormElements, StyledStatusInfo } from "./styled";
+import { StyledForm, StyledTitle, StyledErroIcon, StyledArrow, StyledWrapper, StyledFormElements, StyledStatusInfo } from "./styled";
 import { useRatesData } from "../hooks/useRatesData";
 import { Waveform } from '@uiball/loaders'
+import errorIcon from "../picture/error-icon.png"
 
 const Form = ({calculateResult, convertedAmount, calcReset}) => {
     const [amount, setAmount] = useState(1);
@@ -41,6 +41,7 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
                     </StyledStatusInfo>
                 ) : rateData.status === "fail" ? (
                     <StyledStatusInfo>
+                        <StyledErroIcon src={errorIcon}/>
                         <p>Upss.. Coś poszło nie tak. Sprawdź połączenie internetowe i spróbuj odświeżyć stronę.</p>
                     </StyledStatusInfo>
 
@@ -71,6 +72,7 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
                 calcReset={calcReset} 
                 setAmount={setAmount} 
                 setCurrency={setCurrency} 
+                setActive={setActive}
             />
         </StyledForm>
     )
