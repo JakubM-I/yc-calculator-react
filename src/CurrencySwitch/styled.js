@@ -33,7 +33,7 @@ export const StyledInput = styled.input.attrs({type: "radio"})`
 export const StyleCurrencySelect = styled.select`
     width: 120px;
     height: 50px;
-    font-size: 22px;
+    font-size: min(max(6.10vw, 16px), 20px);
     padding: 4px;
     border-radius: 5px;
     border: 1px solid #000;

@@ -9,7 +9,7 @@ export const StyledLabel = styled.label`
 export const StyledAmountInput = styled.input`
     width: 120px;
     height: 50px;
-    font-size: 22px;
+    font-size: min(max(6.10vw, 16px), 20px);
     padding: 4px;
     overflow: hidden;
 

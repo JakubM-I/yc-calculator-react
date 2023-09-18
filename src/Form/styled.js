@@ -15,7 +15,7 @@ export const StyledTitle = styled.h2`
     text-align: center;
     background: #dededc70;
     color:#615355;
-    font-size: min(max(4.26vw, 13px), 16px);
+    font-size: min(max(4.26vw, 14px), 16px);
 `;
 
 export const StyledStatusInfo = styled.div`
@@ -28,6 +28,11 @@ export const StyledStatusInfo = styled.div`
         font-size: min(max(4.26vw, 13px), 16px);
         text-align: center;
     }
+`;
+
+export const StyledErroIcon = styled.img`
+    max-width: min(max(6.10vw, 26px), 36px);
+    margin-right: 3px;
 `;
 
 export const StyledArrow  = styled.img`

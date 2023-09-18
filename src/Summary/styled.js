@@ -7,12 +7,16 @@ export const StyledSummary = styled.div`
 
 export const StyledResult = styled.div`
     font-size: min(max(6vw, 18px), 22px);
-    margin-top: 0px;
-    height: 0;
-    transition: height ease-in 1s;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height .85s ease-in, opacity 1s ease-in, visibility 1s ease-in;
 
     ${({active}) => active && css`
-        height: 1.5em;
+        max-height: 1.5em;
+        visibility: visible;
+        opacity: 1;
     `}
 `;
 
