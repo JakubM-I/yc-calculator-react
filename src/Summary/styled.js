@@ -6,7 +6,7 @@ export const StyledSummary = styled.div`
 `;
 
 export const StyledResult = styled.div`
-    font-size: min(max(6vw, 18px), 22px);
+    font-size: ${({theme}) => theme.fontsize.ftResult};
     margin-top: 0;
     max-height: 0;
     opacity: 0;
@@ -26,5 +26,5 @@ export const StyledSummaryAmount = styled.span`
 `;
 
 export const StyledSummaryInformation  = styled.p`
-    font-size: 13px;
+    font-size: ${({theme}) => theme.fontsize.ftSummary};
 `;

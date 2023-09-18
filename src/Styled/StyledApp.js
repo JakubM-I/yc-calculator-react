@@ -10,9 +10,9 @@ export const StyledApp = styled.div`
         text-align: center;
         padding: 5px;
         margin: 0 auto 25px;
-        font-size: min(max(10.52vw, 28px), 32px);
+        font-size: ${({theme}) => theme.fontsize.ftTitle};
         border-radius: 10px;
-        background: #ffffff63;
+        background: ${({theme}) => theme.colors.bgTitle};
         backdrop-filter: blur(5px);
     }
 `;

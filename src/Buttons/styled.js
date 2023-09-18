@@ -6,9 +6,9 @@ export const StyledButtonSubmit  = styled.button`
     display: block;
     margin: 0 auto;
     margin-top: 25px;
-    background: #615355;
+    background: ${({theme}) => theme.colors.ftMain};
     border: none;
-    color: #DEDEDC;
+    color: ${({theme}) => theme.colors.ftButton};
     border-radius: 5px;
     font-size: 20px;
     font-weight: 600;
@@ -16,15 +16,15 @@ export const StyledButtonSubmit  = styled.button`
     transition: background-color .3s ease-in, color .3s ease-in;
 
     &:hover{
-        background: #958386;
-        color: #adada8;
+        background: ${({theme}) => theme.colors.bgBtnHov};
+        color: ${({theme}) => theme.colors.ftBtnHov};
     }
 `;
 
 export const StyledButtonReset = styled.button`
     width: fit-content;
     display: block;
-    background: #61535582;
+    background: ${({theme}) => theme.colors.bgReset};
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: none;
@@ -32,12 +32,12 @@ export const StyledButtonReset = styled.button`
     padding: 5px 10px;
     margin: 0 auto;
     margin-top: 10px;
-    color: #DEDEDC;
+    color: ${({theme}) => theme.colors.ftButton};
     text-decoration: underline;
     cursor: pointer;
     transition: color .3s ease-in;
 
     &:hover{
-        color: #c6c6c3;
+        color: ${({theme}) => theme.colors.ftBtnResHov};
     }
 `;

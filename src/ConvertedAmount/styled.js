@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const StyledLabel = styled.label`
     text-align: center;
-    font-size:min(max(6.10vw, 16px), 20px);
+    font-size: ${({theme}) => theme.fontsize.ftFormInput};
     padding-inline: 4px;
 `;
 
 export const StyledAmountInput = styled.input`
     width: 120px;
     height: 50px;
-    font-size: min(max(6.10vw, 16px), 20px);
+    font-size: ${({theme}) => theme.fontsize.ftFormInput};
     padding: 4px;
     overflow: hidden;
 
@@ -17,7 +17,7 @@ export const StyledAmountInput = styled.input`
         font-size: 14px;
     }
 
-    @media(max-width: 450px){
+    @media(max-width: ${({theme}) => theme.breakepoints.mobile}px){
         flex-grow: 1;
     }
 `;
@@ -29,9 +29,9 @@ export const StyledAmountWrapper = styled(StyledAmountInput)`
     align-items: center;
     justify-content: flex-start;
     border-radius: 5px;
-    border: 1px solid #000; 
+    border: 1px solid ${({theme}) => theme.colors.brInput}; 
 
-    @media(max-width: 450px){
+    @media(max-width: ${({theme}) => theme.breakepoints.mobile}px){
         width: calc(100% - 1em);
     }
 `
