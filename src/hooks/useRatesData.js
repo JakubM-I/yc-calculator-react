@@ -4,7 +4,7 @@ export const useRatesData = () => {
     const [calcState, setCalcState] = useState({
         status: "loading",
     });
-    // console.log(calcState)
+
     useEffect(() => {
         const importRates = async () => {
             try{

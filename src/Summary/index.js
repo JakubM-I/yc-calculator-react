@@ -1,7 +1,6 @@
-// import "./style.css";
 import { StyledSummary, StyledResult, StyledSummaryAmount, StyledSummaryInformation } from "./styled";
 
-const Summary = ({rateData, convertedAmount, currency, active}) => {
+const Summary = ({rateData, convertedAmount, active}) => {
     const summaryCurrencyPrice = `${Object.keys(convertedAmount).length === 0 
         ? (rateData.rates["EUR"]).toFixed(3) 
         : (+convertedAmount.rate).toFixed(3)}`;
@@ -9,11 +8,9 @@ const Summary = ({rateData, convertedAmount, currency, active}) => {
     const summaryCurrency = `${Object.keys(convertedAmount).length === 0 
         ? "EUR"
         : (convertedAmount.currencyOutLabel)}`;
-    console.log(rateData.date)
     
     return (
         <StyledSummary>
-            
             <StyledResult active={active} >
                 {Object.keys(convertedAmount).length !== 0 && (
                     <p>

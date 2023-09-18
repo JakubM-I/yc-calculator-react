@@ -1,8 +1,4 @@
-import { currencies } from "../Currencies";
-import { StyledSwitch, StyledItem, StyledCurrencyLabel, StyledInput, StyleCurrencySelect } from "./styled";
-import { useRatesData } from "../hooks/useRatesData";
-import { useState } from 'react';
-
+import { StyleCurrencySelect } from "./styled";
 
 const CurrencySwitch = ({rateData, currency, setCurrency}) => {
 
@@ -16,24 +12,6 @@ const CurrencySwitch = ({rateData, currency, setCurrency}) => {
                     <option key={currency} value={currency}>{currency}</option>
                 ))}
             </StyleCurrencySelect>
-            {/* <StyledSwitch>
-                {currencies.map(currencyType => ( 
-                    <StyledItem key={currencyType.label}>
-                        <StyledInput
-                            id={currencyType.currencyName}
-                            type="radio"
-                            name="currency"
-                            value={currencyType.label}
-                            checked={currency === currencyType.label}
-                            onChange={({ target }) => setCurrency(target.value)}
-                        />
-                        <StyledCurrencyLabel
-                            htmlFor={currencyType.currencyName}>
-                            {currencyType.currencyName}
-                        </StyledCurrencyLabel>
-                    </StyledItem>
-                ))}
-            </StyledSwitch> */}
         </>
     )
 };
