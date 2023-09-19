@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Form from './Form';
-import { currencies } from './Currencies';
 import { StyledCalculator } from './Styled/StyledGlobal';
 import { StyledApp } from './Styled/StyledApp';
 import { useRatesData } from './hooks/useRatesData';
@@ -23,8 +22,6 @@ function App() {
       rate: `${(calcData.rates[currency])}`,
     });
   };
-  
-
 
   return (
     <ThemeProvider theme={theme}>

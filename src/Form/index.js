@@ -24,12 +24,11 @@ const Form = ({calculateResult, convertedAmount, setConvertedAmount}) => {
         setActive(true);
       };
 
-      const calcReset = (setAmount, setCurrency, setActive) => {
+      const calcReset = (setAmount, setCurrency) => {
         setAmount(1);
         setCurrency("EUR");
         setConvertedAmount({})
         setActive(false)
-        console.log(convertedAmount)
       };
     
     return (

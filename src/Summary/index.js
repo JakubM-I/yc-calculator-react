@@ -8,10 +8,10 @@ const Summary = ({rateData, convertedAmount, active}) => {
     const summaryCurrency = `${Object.keys(convertedAmount).length === 0 
         ? "EUR"
         : (convertedAmount.currencyOutLabel)}`;
-    
-    return (
+
+        return (
         <StyledSummary>
-            <StyledResult active={active} >
+            <StyledResult active={active ? "true" : "false"} >
                 {Object.keys(convertedAmount).length !== 0 && (
                     <p>
                         <span>

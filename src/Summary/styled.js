@@ -13,7 +13,7 @@ export const StyledResult = styled.div`
     visibility: hidden;
     transition: max-height .85s ease-in, opacity 1s ease-in, visibility 1s ease-in;
 
-    ${({active}) => active && css`
+    ${({active}) => active === "true" && css`
         max-height: 1.5em;
         visibility: visible;
         opacity: 1;
