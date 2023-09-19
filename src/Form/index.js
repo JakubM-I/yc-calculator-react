@@ -11,7 +11,7 @@ import { useRatesData } from "../hooks/useRatesData";
 import { Waveform } from '@uiball/loaders'
 import errorIcon from "../picture/error-icon.png"
 
-const Form = ({calculateResult, convertedAmount, calcReset}) => {
+const Form = ({calculateResult, convertedAmount, setConvertedAmount}) => {
     const [amount, setAmount] = useState(1);
     const [currency, setCurrency] = useState("EUR");
     const rateData = useRatesData();
@@ -22,6 +22,14 @@ const Form = ({calculateResult, convertedAmount, calcReset}) => {
     
         calculateResult(amount, currency);
         setActive(true);
+      };
+
+      const calcReset = (setAmount, setCurrency, setActive) => {
+        setAmount(1);
+        setCurrency("EUR");
+        setConvertedAmount({})
+        setActive(false)
+        console.log(convertedAmount)
       };
     
     return (

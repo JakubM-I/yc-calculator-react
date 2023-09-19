@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 import Form from './Form';
 import { currencies } from './Currencies';
 import { StyledCalculator } from './Styled/StyledGlobal';
 import { StyledApp } from './Styled/StyledApp';
 import { useRatesData } from './hooks/useRatesData';
+import { theme } from './theme/theme';
+
 
 function App() {
   const [convertedAmount, setConvertedAmount] = useState({});
@@ -21,24 +24,22 @@ function App() {
     });
   };
   
-  const calcReset = (setAmount, setCurrency) => {
-    setAmount(1);
-    setCurrency(currencies[0].id);
-    setConvertedAmount({})
-  };
+
 
   return (
-    <>
-      <StyledCalculator  />
-      <StyledApp>
-        <h1>Kalkuator walutowy</h1>
-        <Form 
-          calculateResult={calculateResult}
-          convertedAmount={convertedAmount}
-          calcReset={calcReset}
-        />
-      </StyledApp>
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+        <StyledCalculator  />
+        <StyledApp>
+          <h1>Kalkuator walutowy</h1>
+          <Form 
+            calculateResult={calculateResult}
+            convertedAmount={convertedAmount}
+            setConvertedAmount={setConvertedAmount}
+          />
+        </StyledApp>
+      </>
+    </ThemeProvider>
   );
 };
 
