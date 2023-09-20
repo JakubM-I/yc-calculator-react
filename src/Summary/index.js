@@ -1,6 +1,7 @@
 import { StyledSummary, StyledResult, StyledSummaryAmount, StyledSummaryInformation } from "./styled";
 
 const Summary = ({rateData, convertedAmount, active}) => {
+    
     const summaryCurrencyPrice = `${Object.keys(convertedAmount).length === 0 
         ? (rateData.rates["EUR"]).toFixed(3) 
         : (+convertedAmount.rate).toFixed(3)}`;

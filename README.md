@@ -11,7 +11,7 @@ This is React version of my app, bootstrapped with [Create React App](https://gi
 
 ## About my page
 ---
-Currency calculator allows converting amount in PLN to one of three currencies: euro, dollar, Swiss franc. After convert, calculator show information about the rate of the selected currency.
+Currency calculator allows converting amount in PLN to different currencies. After convert, calculator show information about the rate of the selected currency. The exchange rate is taken at the start of the application from the European Central Bank.
 
 ## Techniques
 ---
@@ -19,6 +19,9 @@ Currency calculator allows converting amount in PLN to one of three currencies: 
 - Flex
 - CSS function min, max
 - React JS
+- Styled components
+- Fetch API
+- Async/await
 - ES6+ feature
 - BEM
 
